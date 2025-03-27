@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.pet-container {
+    margin: 2rem 0;
+}
+
+.pet {
+    font-size: 6rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.status-bars {
+    margin: 1.5rem 0;
+}
+
+.status {
+    margin: 1rem 0;
+}
+
+.bar {
+    background: #eee;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease, background 0.3s ease;
+}
+
+/* Button controls grid */
+.controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .pet {
+        font-size: 4rem;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .status {
+        margin: 0.8rem 0;
+    }
+}
+
+@media (min-width: 769px) {
+    .pet {
+        font-size: 8rem;
+    }
+
+    .container {
+        padding: 2.5rem;
+    }
+}
+
+/* Existing color classes and animations remain same */
+.hunger { background: #ff6b6b; }
+.happiness { background: #4ecdc4; }
+.energy { background: #ffe66d; }
+
+.feed { background: #ff6b6b; color: white; }
+.play { background: #4ecdc4; color: white; }
+.sleep { background: #ffe66d; color: #333; }
+
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.happy { animation: jump 0.5s ease; }
+.sad { animation: spin 1s linear; }
+.sleeping { animation: none; opacity: 0.7; }
